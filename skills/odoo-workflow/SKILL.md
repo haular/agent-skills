@@ -3,7 +3,7 @@ name: odoo-workflow
 description: >
   Mandatory pre-code gate and definition-of-done for ANY Odoo change (add field, override method,
   inherit view/xpath, OWL/JS patch, wizard, cron, controller, report, security, migration, bug fix,
-  refactor, "optimize", "clean code", "stick to base"), Odoo 16-19. Also when the user pastes an
+  refactor, "optimize", "clean code", "stick to base"), Odoo 16-20. Also when the user pastes an
   Odoo traceback or install/upgrade error (ParseError "cannot be located in parent view", "Field
   ... does not exist", missing xmlid) or asks where an Odoo model, field, method, view or xmlid is
   defined. Run BEFORE brainstorming or planning: Odoo design questions are answered by tracing the
@@ -112,9 +112,10 @@ grep -rnE --include='*.js' "^export (default )?(class|function|const) NAME[^A-Za
 #     its controller class (an `import CLASS as ALIAS` hit: run the class grep again with ALIAS)
 grep -rnE --include='*.py' "@(http\.)?route\(.*['\"]URL['\"]|^\s*(route=)?\[?\s*['\"]URL['\"]" ROOTS
 grep -rnE --include='*.py' "^class \w+\(([^)]*[ ,])?([A-Za-z_.]+\.)?CLASS[,)]|import.*[ ,]CLASS as " ROOTS
-# S1. ACL rows and record rules on MODEL (dots as underscores)
+# S1. ACL rows and record rules on MODEL (dots as underscores); 20+: ir.access rows (model by name)
 grep -rn --include='ir.model.access.csv' "model_MODEL_UNDERSCORED," ROOTS
 grep -rlE --include='*.xml' "model_MODEL_UNDERSCORED['\"]" ROOTS | grep security
+grep -rnF --include='ir.access.csv' ",MODEL," ROOTS
 # U1. Every use of NAME before renaming, removing, or changing the signature of a field or method
 grep -rnwE --include='*.py' --include='*.xml' --include='*.js' --include='*.csv' --include='*.scss' "NAME" ROOTS
 # T1. Tests to mirror
@@ -235,7 +236,7 @@ with one implementation.
   `_inherit` without `_name` creates a new model named after the class: on 19 always (with a
   warning), on 18 once the list has two items.
 - Every new XML or CSV file goes into the manifest `data` in load order (groups,
-  `ir.model.access.csv`, views, menus); every new static file must match an entry of the right
+  `ir.model.access.csv` - `ir.access.csv` on 20 -, views, menus); every new static file must match an entry of the right
   `assets` bundle. An unlisted file installs cleanly and does nothing.
 - `sudo()` naming: bind any recordset obtained through `sudo()` to a name ending in `_sudo`
   (`partner_sudo = self.partner_id.sudo()`,
@@ -258,7 +259,7 @@ version. In short:
 - [ ] Upgrade tested on a copy of a database with the previous version whenever the Brief has a
       `migration` row.
 - [ ] `odoo_trace unlisted <module>` reports that all files load.
-- [ ] ACL rows for every new model; company rule where the Company rule applies; every `sudo()`
+- [ ] ACL rows (`ir.access` rows on 20) for every new model; company rule where the Company rule applies; every `sudo()`
       has its `security` row.
 - [ ] i18n regenerated whenever a string changed; shipped `.po` files keep their names.
 - [ ] The project's own linter, if it has one, passes on the changed files.

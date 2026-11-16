@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/a6f73c3a-7253-4621-b72e-511e2e57cb3a
 **Kiến thức chuyên sâu theo đúng phiên bản cho phát triển Odoo.**
 
 Bộ tài liệu tham chiếu, quy trình phát triển "trace trước, code sau" và các agent review chuyên biệt,
-giúp trợ lý AI viết code dựa trên source Odoo thật của bạn thay vì dựa vào trí nhớ. Hỗ trợ Odoo 16–19.
+giúp trợ lý AI viết code dựa trên source Odoo thật của bạn thay vì dựa vào trí nhớ. Hỗ trợ Odoo 16–20.
 
 [![npm version](https://img.shields.io/npm/v/@unclecat/agent-skills-cli?style=flat-square&color=714B67)](https://www.npmjs.com/package/@unclecat/agent-skills-cli)
 [![MIT license](https://img.shields.io/badge/license-MIT-714B67?style=flat-square)](LICENSE)
@@ -35,7 +35,7 @@ Repository này trang bị cho trợ lý ba thứ để chống lại những l�
 
 | Thành phần | Chức năng |
 | --- | --- |
-| **Gói tham chiếu Odoo** (16.0, 17.0, 18.0, 19.0) | Hướng dẫn theo từng phiên bản về model, field, view, OWL, security, controller, report, test, migration, bản dịch và hiệu năng, kèm file `api-highlights.md` liệt kê những gì không được dùng ở phiên bản đó. |
+| **Gói tham chiếu Odoo** (16.0, 17.0, 18.0, 19.0, 20.0) | Hướng dẫn theo từng phiên bản về model, field, view, OWL, security, controller, report, test, migration, bản dịch và hiệu năng, kèm file `api-highlights.md` liệt kê những gì không được dùng ở phiên bản đó. |
 | **Skill Odoo Workflow** | Quy trình trợ lý tuân theo cho mọi thay đổi Odoo: tìm runtime, trace source thật bằng script helper đi kèm, viết Context Brief mà mọi khẳng định đều có `file:line`, triển khai thay đổi nhỏ nhất, rồi chứng minh nó chạy được trên một database dùng xong bỏ. |
 | **Agent** | Một agent trace code và một agent review code có chấm điểm, dùng chung quy tắc về phiên bản và runtime. |
 
@@ -290,6 +290,7 @@ Hãy đòi bằng chứng: Brief, dòng tổng kết test, và những bước k
 | [Odoo 17.0](skills/odoo-17.0/) | Tài liệu tham chiếu phát triển và API highlights theo phiên bản. |
 | [Odoo 18.0](skills/odoo-18.0/) | Tài liệu tham chiếu phát triển và API highlights theo phiên bản. |
 | [Odoo 19.0](skills/odoo-19.0/) | Tài liệu tham chiếu phát triển và API highlights theo phiên bản. |
+| [Odoo 20.0](skills/odoo-20.0/) | Tài liệu tham chiếu phát triển và API highlights theo phiên bản. |
 | [Odoo Workflow](skills/odoo-workflow/) | Quy trình trace trước cho mọi thay đổi Odoo: phát hiện runtime, trace helper, Context Brief có trích dẫn, và definition of done chạy trên database dùng xong bỏ. |
 | [Odoo Commit](skills/odoo-commit/) | Commit message theo chuẩn Odoo, stage file tường minh và chuẩn bị commit. |
 | [DTG Base](skills/dtg-base/) | Tham chiếu cho các tiện ích DTGBase: ngày tháng, múi giờ, batch, barcode, văn bản và file. |
@@ -312,7 +313,7 @@ report, testing, hiệu năng, transaction, migration, bản dịch, mixin, mani
 
 ## Phiên bản Odoo và runtime
 
-Cài gói khớp với dự án của bạn: **16.0, 17.0, 18.0 hoặc 19.0**. Workflow, helper của nó và các chỉnh
+Cài gói khớp với dự án của bạn: **16.0, 17.0, 18.0, 19.0 hoặc 20.0**. Workflow, helper của nó và các chỉnh
 sửa của bản phát hành này cho gói 18.0 và 19.0 đã được đối chiếu với source Odoo 18 và 19; các phần
 còn lại của các gói, đặc biệt là 16.0/17.0, được duy trì nhưng chưa được kiểm chứng lại toàn bộ với
 một bản checkout.

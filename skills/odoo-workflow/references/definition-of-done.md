@@ -110,7 +110,7 @@ The options go before the subcommand. `db drop` removes the filestore too; `drop
 
 ## 7. Security (also the Step 6 fallback when the review agent is not installed)
 
-- [ ] Every new model has `ir.model.access.csv` rows; groups are the narrowest that work.
+- [ ] Every new model has `ir.model.access.csv` rows (`security/ir.access.csv` on 20); groups are the narrowest that work.
 - [ ] Company-bound models have the company record rule; relational fields to company-bound
       comodels have `check_company=True`.
 - [ ] Every `sudo()` / `with_user(SUPERUSER_ID)` has its Brief `security` row: what it bypasses

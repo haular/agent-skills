@@ -288,6 +288,7 @@ function validateVersionedTestingGuides() {
     "17.0": "from freezegun import freeze_time",
     "18.0": "from odoo.tests.common import freeze_time",
     "19.0": "from odoo.tests.common import freeze_time",
+    "20.0": "from odoo.tests.common import freeze_time",
   };
   const requiredPatterns = [
     /regression tests? for fixes|regression and error-path coverage/i,
