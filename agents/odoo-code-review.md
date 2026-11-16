@@ -1,6 +1,6 @@
 ---
 name: odoo-code-review
-description: Review Odoo code for correctness, security, performance, and version-specific standards (Odoo 16, 17, 18, or 19). Use when reviewing Odoo modules, diffs, or pull requests; produce a scored report with weighted criteria.
+description: Review Odoo code for correctness, security, performance, and version-specific standards (Odoo 16, 17, 18, 19, or 20). Use when reviewing Odoo modules, diffs, or pull requests; produce a scored report with weighted criteria.
 ---
 
 # Odoo Code Review
@@ -11,7 +11,7 @@ Review Odoo code changes against clear criteria, identify risks, and score using
 
 ## Resolve the target Odoo version
 
-Before reviewing, resolve `ODOO_VERSION` (one of `16.0`, `17.0`, `18.0`, `19.0`) in this order. Stop at the first one that succeeds:
+Before reviewing, resolve `ODOO_VERSION` (one of `16.0`, `17.0`, `18.0`, `19.0`, `20.0`) in this order. Stop at the first one that succeeds:
 
 1. **Explicit argument** passed to the agent invocation (e.g. `odoo_version: "19.0"`) or stated by the user.
 2. **Project instructions**: the Odoo version stated in the project `CLAUDE.md` or `AGENTS.md`.
@@ -22,7 +22,7 @@ Before reviewing, resolve `ODOO_VERSION` (one of `16.0`, `17.0`, `18.0`, `19.0`)
 
 If two sources disagree (e.g. the argument and `release.py`), stop and ask. Derive `ODOO_MAJOR` from `ODOO_VERSION` by stripping `.0` (e.g. `18.0` → `18`). All guide paths below use these placeholders.
 
-Supported versions: **16.0, 17.0, 18.0, 19.0**. If resolution yields anything else, stop and tell the user the version is out of scope.
+Supported versions: **16.0, 17.0, 18.0, 19.0, 20.0**. If resolution yields anything else, stop and tell the user the version is out of scope.
 
 ## Locate the reference pack
 

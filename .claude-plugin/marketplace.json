@@ -6,14 +6,14 @@
     "url": "https://github.com/unclecatvn"
   },
   "metadata": {
-    "description": "Skills and agents for Odoo 16-19 development",
+    "description": "Skills and agents for Odoo 16-20 development",
     "version": "1.0.20"
   },
   "plugins": [
     {
       "name": "agent-skills",
       "source": "./",
-      "description": "Odoo 16-19 skill packs, the odoo-workflow pre-code gate, Odoo commit style, and the Odoo review/tracer agents",
+      "description": "Odoo 16-20 skill packs, the odoo-workflow pre-code gate, Odoo commit style, and the Odoo review/tracer agents",
       "version": "1.0.20",
       "category": "development",
       "keywords": [

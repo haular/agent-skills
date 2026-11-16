@@ -7,7 +7,7 @@ https://github.com/user-attachments/assets/a6f73c3a-7253-4621-b72e-511e2e57cb3a
 **Version-aware expertise for Odoo development.**
 
 Reference packs, a trace-first development workflow, and specialized reviewers that make AI coding
-assistants work from your real Odoo source instead of from memory. Odoo 16–19.
+assistants work from your real Odoo source instead of from memory. Odoo 16–20.
 
 [![npm version](https://img.shields.io/npm/v/@unclecat/agent-skills-cli?style=flat-square&color=714B67)](https://www.npmjs.com/package/@unclecat/agent-skills-cli)
 [![MIT license](https://img.shields.io/badge/license-MIT-714B67?style=flat-square)](LICENSE)
@@ -35,7 +35,7 @@ This repository gives the assistant three things against that:
 
 | Part | What it does |
 | --- | --- |
-| **Odoo reference packs** (16.0, 17.0, 18.0, 19.0) | Version-specific guides for models, fields, views, OWL, security, controllers, reports, tests, migrations, translations and performance, plus an `api-highlights.md` list of what not to use in that version. |
+| **Odoo reference packs** (16.0, 17.0, 18.0, 19.0, 20.0) | Version-specific guides for models, fields, views, OWL, security, controllers, reports, tests, migrations, translations and performance, plus an `api-highlights.md` list of what not to use in that version. |
 | **Odoo Workflow skill** | A procedure the assistant follows for every Odoo change: find the runtime, trace the real source with a bundled helper, write a Context Brief where every claim has a `file:line`, implement the smallest change, then prove it on a throwaway database. |
 | **Agents** | A code tracer and a scored code reviewer that share the same version and runtime rules. |
 
@@ -290,6 +290,7 @@ Ask for the evidence: the Brief, the test summary line, and which checks were sk
 | [Odoo 17.0](skills/odoo-17.0/) | Version-specific development references and API highlights. |
 | [Odoo 18.0](skills/odoo-18.0/) | Version-specific development references and API highlights. |
 | [Odoo 19.0](skills/odoo-19.0/) | Version-specific development references and API highlights. |
+| [Odoo 20.0](skills/odoo-20.0/) | Version-specific development references and API highlights. |
 | [Odoo Workflow](skills/odoo-workflow/) | Trace-first procedure for every Odoo change: runtime detection, the trace helper, a cited Context Brief, and a definition of done run on a throwaway database. |
 | [Odoo Commit](skills/odoo-commit/) | Odoo-style commit messages, explicit staging, and commit preparation. |
 | [DTG Base](skills/dtg-base/) | References for DTGBase utilities: dates, timezones, batches, barcodes, text, and files. |
@@ -312,7 +313,7 @@ testing, performance, transactions, migrations, translations, mixins, manifests,
 
 ## Odoo versions and runtime
 
-Install the pack that matches your project: **16.0, 17.0, 18.0 or 19.0**. The workflow, its helper
+Install the pack that matches your project: **16.0, 17.0, 18.0, 19.0 or 20.0**. The workflow, its helper
 and this release's corrections to the 18.0 and 19.0 packs were checked against the Odoo 18 and 19
 source; the rest of the packs, and 16.0/17.0 in particular, are maintained without a full
 re-verification against a checkout.
